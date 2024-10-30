@@ -20,7 +20,7 @@ const Navbar = () => {
     <main className="z-[999] relative w-full flex justify-center">
       {/* Main Navbar for larger screens (shown on md and larger screens) */}
       <motion.div
-        className={`w-[52rem] p-2 rounded-full fixed top-0 md:h-[4rem] border border-white border-opacity-40 bg-gray-900 bg-opacity-80 shadow-lg shadow-white 
+        className={`w-[52rem] p-2 rounded-full fixed top-0 md:h-[4rem] border border-white border-opacity-40 bg-gray-700/40 bg-opacity-80 shadow-lg shadow-white 
             backdrop-blur-[0.03rem] sm:top-6 max-md:h-[5rem] max-md:w-[36rem] hidden
            md:flex transition-all duration-300`}
         initial={{ y: -50, opacity: 0 }}

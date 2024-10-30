@@ -29,9 +29,10 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
       <img
         src={imageUrl}
         alt={title}
-        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-10 w-full h-[35rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
+        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-full h-[35rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
         quality={95}
       />
+      
       <div className="flex flex-col h-[20rem] pt-4 pb-6 px-4">
         <h3 className="project-title text-yellow-500 font-bold text-2xl m-auto underline underline-offset-8 decoration-white decoration-4">
           {title}
@@ -43,7 +44,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
           {tags.map((tag, index) => (
             <li
               key={index}
-              className="project-tag bg-cyan-500 px-3 py-1 text-sm uppercase tracking-wider text-white rounded-full font-medium"
+              className="project-tag bg-cyan-500 px-3 py-1 text-sm  tracking-wider text-black rounded-full font-medium"
             >
               {tag}
             </li>
@@ -55,7 +56,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
             rel="noopener noreferrer"
             className="absolute inset-x-0 top-2/4 text-center opacity-0 group-hover:opacity-100 transition duration-500 flex justify-center"
           >
-            <p className='uppercase  font-bold bg-yellow-500 w-[10rem] flex gap-1 items-center px-6 py-3 rounded-r-xl'>visit site<TbHandClick className='text-3xl text-white'/></p>
+            <p className='uppercase  font-bold bg-yellow-500 w-[5rem] flex gap-1 items-center px-3 py-3 rounded-r-xl'>visit<TbHandClick className='text-3xl text-white'/></p>
           </a>
       </div>
     </section>
