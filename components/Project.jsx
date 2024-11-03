@@ -29,7 +29,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
       <img
         src={imageUrl}
         alt={title}
-        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-full h-[35rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
+        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-full h-[35rem] max-md:h-[25rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
         quality={95}
       />
       
@@ -40,11 +40,11 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
         <p className="project-description mt-2 leading-relaxed  text-white ">
           {description}
         </p>
-        <ul className="project-tags flex flex-wrap mx-1 gap-2 mt-auto">
+        <ul className="project-tags flex flex-wrap mx-2 my-3 py-3 gap-2 mt-auto">
           {tags.map((tag, index) => (
             <li
               key={index}
-              className="project-tag bg-cyan-500 px-3 py-1 text-sm  tracking-wider text-black rounded-full font-medium"
+              className="project-tag bg-cyan-500 px-3  text-sm tracking-wider text-black rounded-full font-medium"
             >
               {tag}
             </li>

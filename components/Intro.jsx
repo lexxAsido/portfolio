@@ -45,7 +45,7 @@ const Intro = () => {
                 animate={{  opacity:1, y: 0}}
                 >
                     Hello! I'm <b>ASIDO ALEXANDAR</b>, a recent graduate in Web Development, specializing in React and Next.js. 
-                    I also have experience in mobile development using React Native for both iOS and Android platforms. 
+                    I also have experience in mobile development using React Native for both IOS and Android platforms. 
                     My passion lies in creating responsive, user-friendly applications that provide seamless experiences across devices. 
                     I'm eager to contribute my skills and collaborate on innovative projects in a dynamic team environment.
                 </motion.p>
@@ -65,12 +65,12 @@ const Intro = () => {
                 href="/CV.pdf" download> 
                     Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
 
-            <a href="#" target="-blank"
+            <a href="https://www.linkedin.com/in/alexandar-asido-b06658134/" target="-blank"
             className='bg-white text-gray-700 flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
                 <BsLinkedin className='text-blue-700 text-3xl'/>
             </a>
 
-            <a href='#'
+            <a href="https://github.com/lexxAsido" target='_blank'
             className='bg-white text-gray-700 text-3xl flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
                 <FaGithubSquare/>
             </a>

@@ -16,7 +16,7 @@ const About = () => {
       <p>
       I am a graduate of History and International Relations who transitioned from creating educational 
       and entertainment content on YouTube to pursuing my passion for programming. After graduation, 
-      I realized that my true interests lay in technology and development, so I enrolled in a coding bootcamp where I learned full-stack web development,
+      I realized that my true interests were in technology and development, so I enrolled in a coding bootcamp where I learnt full-stack web development,
        focusing on React and Next.js. This foundation ignited my enthusiasm for building fully responsive applications with animations, 
        leading me to further my skills in iOS and Android development using React Native.
       </p>
