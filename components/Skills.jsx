@@ -10,7 +10,7 @@ const Skills = () => {
         animate={{ opacity: 1, y: 0}}
         transition={{ delay: 0.175}}
         >
-      <h1 className='font-bold text-3xl capitalize mb-5'>my skills</h1>
+      <h1 className='font-bold text-3xl capitalize mb-5'>my skills & tools</h1>
       <ul className='flex flex-wrap justify-center gap-5 text-lg max-md:text-sm'>
         {skillsData.map((skill, index)=>(
             <li 
