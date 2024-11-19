@@ -29,7 +29,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
       <img
         src={imageUrl}
         alt={title}
-        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-full h-[35rem] max-md:h-[25rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
+        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-full h-[35rem] max-md:h-[15rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
         quality={95}
       />
       
