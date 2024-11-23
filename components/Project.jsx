@@ -34,17 +34,17 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
       />
       
       <div className="flex flex-col h-[20rem] pt-4 pb-6 px-4">
-        <h3 className="project-title text-yellow-500 font-bold text-2xl m-auto underline underline-offset-8 decoration-white decoration-4">
+        <h3 className="project-title text-yellow-500 font-bold text-2xl m-auto underline underline-offset-8 decoration-white decoration-4 max-md:text-sm">
           {title}
         </h3>
-        <p className="project-description mt-2 leading-relaxed  text-white ">
+        <p className="project-description mt-2 leading-relaxed  text-white max-md:text-sm">
           {description}
         </p>
         <ul className="project-tags flex flex-wrap mx-2 my-3 py-3 gap-2 mt-auto">
           {tags.map((tag, index) => (
             <li
               key={index}
-              className="project-tag bg-cyan-500 px-3  text-sm tracking-wider text-black rounded-full font-medium"
+              className="project-tag bg-cyan-500 px-1 md:px-3 text-sm tracking-wider text-black rounded-full font-medium"
             >
               {tag}
             </li>

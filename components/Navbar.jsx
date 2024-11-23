@@ -55,7 +55,7 @@ const Navbar = () => {
 
         {/* Show links conditionally based on navOpen state */}
         {navOpen && (
-          <div className="absolute  -right-2 bg-cyan-500/60 w-screen p-5 flex flex-col items-center z-40 shadow-2xl">
+          <div className="absolute  -right-2 bg-gray-500/60 w-screen p-10 h-screen flex flex-col gap-10 items-center z-60 backdrop-blur-sm shadow-2xl">
             {links.map((link) => (
               <Link
                 key={link.hash}
