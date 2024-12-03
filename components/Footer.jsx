@@ -19,14 +19,14 @@ const Footer = () => {
      transition={{ delay: 0.195}}
       >
       <div
-        className="h-[35rem] bg-cyan-300  w-full flex flex-row gap-20 p-14 shadow-xl justify-center mx-3 transition-all max-md:h-auto max-md:flex-col"
+        className="h-[35rem] bg-cyan-300  flex flex-row gap-20 p-14 shadow-xl justify-center mx-3 transition-all max-md:h-auto max-md:flex-col"
         id="contact" >
-        <div className="w-[50rem] max-md:w-auto shadow-lg p-10 bg-white hover:bg-black hover:text-white transition flex justify-center flex-col hover:scale-110">
+        <div className=" max-md:w-auto shadow-lg p-10 bg-white hover:bg-black hover:text-white transition flex justify-center flex-col hover:scale-110">
           <h2 className="uppercase font-bold text-3xl max-md:text-sm flex  gap-2 justify-center">
             Asido Alexandar Socials
             <TfiLayoutMediaLeftAlt className="text-cyan-500" />
           </h2>
-          <div className="text-6xl flex justify-center gap-8 mt-2 md:p-5">
+          <div className="md:text-6xl flex justify-center gap-8 mt-2 md:p-5 max-md:text-xl max-md:gap-1">
             
             
             <a href="https://www.instagram.com/officiallexxmedia?igsh=MWg0bjVkOXcxZjl5eg%3D%3D&utm_source=qr" target="_blank">
@@ -52,20 +52,20 @@ const Footer = () => {
             to reach out.
           </p>
 
-         <p className="flex gap-1 items-center py-3  bg-cyan-500 w-[11rem] rounded-lg text-lg max-md:w-auto"><FaPhoneVolume className="text-2xl text-black "/>+2348103717214</p>
+         <p className="flex gap-1 items-center py-3 justify-center bg-cyan-500 w-[11rem] rounded-lg text-lg max-md:w-auto"><FaPhoneVolume className="text-sm text-black "/>+2348103717214</p>
             <a
             href="mailto:alexandaras2015@gmail.com"
-              className="p-3 w-[10rem] max-md:w-auto flex items-center gap-2 bg-yellow-500 rounded-lg font-bold uppercase"
+              className="p-3 w-[10rem] max-md:w-auto flex items-center gap-2 bg-yellow-500 rounded-lg font-bold capitalize justify-center"
             >
-              Send Mail<MdOutlineEmail className="text-black text-2xl" />
+              Send me Mail<MdOutlineEmail className="text-black text-2xl" />
             </a>
-          {/* </form> */}
+          
         </div>
       </div>
       <div className="h-[2rem] max-md:h-auto max-md:w-auto uppercase flex justify-center">
-        <h3 className="flex items-center gap-2  font-bold max-md:text-sm">
+        <h3 className="flex items-center text-sm justify-center">
           <FaCopyright />
-          Personal portfolio designed by Asido Alexandar
+          copyright 2024 Asido Alexandar. All Rights reserved
         </h3>
       </div>
     </motion.main>

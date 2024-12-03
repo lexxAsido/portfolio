@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from 'react-icons/fa';
+import { MdOutlineEmail } from 'react-icons/md';
 
 const Intro = () => {
   return (
@@ -54,16 +55,10 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0}}
         transition={{delay: 0.1,}}
         >
-            <Link href={"#contact"}
+            {/* <Link href={"#contact"}
             className=' group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
                 py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500'
-            > Contact Me Here <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition'/> </Link>
-
-            <a className='group bg-yellow-500 hover:bg-black hover:text-white text-gray-900 flex items-center py-4 
-                px-7 rounded-full gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-md shadow-yellow-500'
-                // save your cv in the public folder and replace with the href link
-                href="/CV.pdf" download> 
-                    Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
+            > Hire Me <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition'/> </Link> */}
 
             <a href="https://www.linkedin.com/in/alexandar-asido-b06658134/" target="-blank"
             className='bg-white text-gray-700 flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
@@ -74,6 +69,20 @@ const Intro = () => {
             className='bg-white text-gray-700 text-3xl flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
                 <FaGithubSquare/>
             </a>
+
+            <a className='group bg-yellow-500 hover:bg-black hover:text-white text-gray-900 flex items-center py-4 
+                px-7 rounded-full gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-md shadow-yellow-500'
+                // save your cv in the public folder and replace with the href link
+                href="/CV.pdf" download> 
+                    Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
+
+                <a
+                href="mailto:alexandaras2015@gmail.com"
+                  className="group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
+                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500"
+                >
+                  Hire Me
+                </a>
         </motion.div>
     </main>
   );
