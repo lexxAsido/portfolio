@@ -9,7 +9,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
     const ref = (null)
     const { scrollYProgress} = useScroll({
       target: ref,
-      offset: ["0 0", "0.5 0"]
+      offset: ["0 0.5", "0.5 0"]
     });
   return (
     <motion.main
