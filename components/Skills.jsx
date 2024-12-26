@@ -17,7 +17,7 @@ const Skills = () => {
       <ul className="flex flex-wrap justify-center gap-5 text-lg max-md:text-sm hover:bg-cyan-300 text-black p-5 bg-white items-center hover:scale-110 transition-all rounded-md ">
         {skillsData.map((skill, index) => (
           <li
-            className="flex flex-col items-center p-2 hover:scale-110 transition-all font-bold hover:text-cyan-500 rounded-md cursor-pointer"
+            className="flex flex-col items-center p-2 hover:scale-110 transition-all font-bold hover:text-white rounded-md cursor-pointer"
             key={index}
           >
             {/* Display the skill image */}

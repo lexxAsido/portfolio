@@ -29,15 +29,15 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
       <img
         src={imageUrl}
         alt={title}
-        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 p-2 w-[32rem] lg:ml-[3rem] mt-3 h-[30rem] max-md:h-[15rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
+        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 items-center p-2 w-full mt-3 h-[30rem] max-md:h-[15rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
         quality={95}
       />
       
       <div className="flex flex-col h-[20rem] pt-4 pb-6 px-4 max-md:h-auto">
-        <h3 className="project-title text-yellow-500 font-bold text-2xl m-auto underline underline-offset-8 decoration-white decoration-4 max-md:text-sm">
+        <h3 className="project-title text-yellow-500 font-bold text-xl m-auto underline underline-offset-8 decoration-white decoration-4 max-md:text-sm">
           {title}
         </h3>
-        <p className="project-description mt-2 leading-relaxed  text-white max-md:text-sm">
+        <p className="project-description mt-2 leading-relaxed  text-white text-sm">
           {description}
         </p>
         <ul className="project-tags flex flex-wrap mx-2 my-3 py-5 gap-2 mt-auto">
