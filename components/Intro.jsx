@@ -27,7 +27,7 @@ const Intro = () => {
                 />
                 </motion.div>
                     {/* press windows logo + . to get waving hands icon on the computer*/}
-                <motion.span className='text-4xl absolute bottom-10 right-0'
+                <motion.span className='text-4xl absolute bottom-10 right-0 animate-bounce'
                 initial={{ opacity:0, scale: 0}}
                 animate={{ opacity:1, scale: 1}}
                 transition={{
@@ -45,7 +45,7 @@ const Intro = () => {
                 initial={{opacity: 0, y: 100}}
                 animate={{  opacity:1, y: 0}}
                 >
-                    Hello! I'm <b>ASIDO ALEXANDAR</b>, a recent graduate in Web Development, specializing in React and Next.js. 
+                    Hello! I'm <b>ASI<span className='text-cyan-500 animate-pulse cursor-pointer'>DO ALEX</span>ANDAR</b>, a recent graduate in Web Development, specializing in React and Next.js. 
                     I also have experience in mobile development using React Native for both IOS and Android platforms. 
                     My passion lies in creating responsive, user-friendly applications that provide seamless experiences across devices. 
                     I'm eager to contribute my skills and collaborate on innovative projects in a dynamic team environment.
@@ -74,12 +74,12 @@ const Intro = () => {
                 px-7 rounded-full gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-md shadow-yellow-500'
                 // save your cv in the public folder and replace with the href link
                 href="/CV.pdf" download> 
-                    Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition'/></a>
+                    Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition text-black text-xl animate-ping group-hover:text-white'/></a>
 
                 <a
                 href="mailto:alexandaras2015@gmail.com"
                   className="group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
-                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500"
+                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500 animate-bounce"
                 >
                   Hire Me
                 </a>
