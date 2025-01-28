@@ -71,7 +71,7 @@ const Intro = () => {
             </a>
 
             <a className='group bg-yellow-500 hover:bg-black hover:text-white text-gray-900 flex items-center py-4 
-                px-7 rounded-full gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition shadow-md shadow-yellow-500'
+                px-7 rounded-full gap-2 outline-none focus:scale-110 over:scale-110 active:scale-105 transition-colors transition-400 ease-in-out delay:400 shadow-md shadow-yellow-500'
                 // save your cv in the public folder and replace with the href link
                 href="/CV.pdf" download> 
                     Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition text-black text-xl animate-ping group-hover:text-white'/></a>
@@ -79,7 +79,7 @@ const Intro = () => {
                 <a
                 href="mailto:alexandaras2015@gmail.com"
                   className="group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
-                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500 animate-bounce"
+                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition-all shadow-md shadow-cyan-500 animate-bounce"
                 >
                   Hire Me
                 </a>
