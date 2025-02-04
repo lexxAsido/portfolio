@@ -45,10 +45,12 @@ const Intro = () => {
                 initial={{opacity: 0, y: 100}}
                 animate={{  opacity:1, y: 0}}
                 >
-                    Hello! I'm <b>ASI<span className='text-cyan-500 animate-pulse cursor-pointer'>DO ALEX</span>ANDAR</b>, a recent graduate in Web Development, specializing in React and Next.js. 
-                    I also have experience in mobile development using React Native for both IOS and Android platforms. 
-                    My passion lies in creating responsive, user-friendly applications that provide seamless experiences across devices. 
-                    I'm eager to contribute my skills and collaborate on innovative projects in a dynamic team environment.
+                    Hello! I'm <span className='font-extrabold text-4xl'>Asido Alexandar</span>, 
+                    a passionate and results-driven Front-End Web and Mobile App Developer with expertise in React, Next.js, JavaScript, TypeScript
+                    and React Native for both iOS and Android platforms. I specialize in building responsive, scalable, 
+                    and user-friendly applications that deliver seamless experiences across devices.
+                    I'm passionate about collaborating on innovative projects and leveraging my problem-solving skills to 
+                    deliver high-quality software solutions. Let's build something exceptional together!
                 </motion.p>
         <motion.div className='flex max-md:flex-col justify-center gap-8 py-3 font-medium items-center'
         initial={{ opacity: 0, y: 100}}
