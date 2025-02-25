@@ -46,7 +46,7 @@ const Intro = () => {
                 animate={{  opacity:1, y: 0}}
                 >
                     Hello! I'm <span className='font-extrabold text-4xl'>Asido Alexandar</span>, 
-                    a passionate and results-driven Front-End Web and Mobile App Developer with expertise in React, Next.js, JavaScript, TypeScript
+                    a passionate and results-driven Front-End and Mobile App Developer with expertise in React, Next.js, JavaScript, TypeScript
                     and React Native for both iOS and Android platforms. I specialize in building responsive, scalable, 
                     and user-friendly applications that deliver seamless experiences across devices.
                     I'm passionate about collaborating on innovative projects and leveraging my problem-solving skills to 
