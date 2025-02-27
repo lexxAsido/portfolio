@@ -56,7 +56,7 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
             rel="noopener noreferrer"
             className="absolute inset-x-0 top-2/4 text-center opacity-0 group-hover:opacity-100 transition duration-500 flex justify-center"
           >
-            <p className='uppercase  font-bold bg-yellow-500 w-[5rem] flex gap-1 items-center px-3 py-3 rounded-r-xl'>visit<TbHandClick className='text-3xl text-white'/></p>
+            <p className='  font-bold bg-yellow-500 w-[7rem] flex gap-1 items-center px-3 py-3 rounded-r-xl'>Live Demo</p>
           </a>
       </div>
     </section>
