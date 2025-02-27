@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Asido | Personal Portfolio",
-  description: "Asido is a versatile web development and mobile app developer seeking an internship to apply my skills in building responsive, user-friendly applications",
+  description: "Asido is a versatile Fontend and mobile developer ",
 };
 
 export default function RootLayout({ children }) {
