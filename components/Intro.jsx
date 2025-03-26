@@ -71,7 +71,7 @@ const Intro = () => {
         variants={itemVariants}
       >
         Hello! I'm{" "}
-        <span className="font-extrabold text-md md:text-4xl">
+        <span className="font-extrabold text-xl md:text-4xl">
           Asido Alexandar
         </span>
         , a passionate and results-driven Front-End and Mobile App Developer

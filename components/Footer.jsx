@@ -10,8 +10,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white">
-      <main className="flex flex-col md:flex-row justify-center items-center gap-10 p-6 md:p-14">
+    <footer className="w-full overflow-hidden bg-black text-white">
+  <main className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-10 p-6 md:p-14 max-w-full">
+
         {/* Socials Section */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -19,7 +20,7 @@ const Footer = () => {
           exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full md:w-auto flex flex-col items-center p-6 md:p-10 bg-gray-700 rounded-lg shadow-lg"
+          className=" w-auto flex flex-col items-center p-6 md:p-10 bg-gray-700 rounded-lg shadow-lg"
           id="contact"
         >
           <h2 className="uppercase font-bold text-2xl md:text-3xl flex gap-2 justify-center">
@@ -55,7 +56,7 @@ const Footer = () => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full md:w-[55rem] max-w-full p-7 bg-black border rounded-lg text-white shadow-lg transition-transform hover:scale-105"
+          className=" md:w-[55rem] w-auto p-7 bg-black border rounded-lg text-white shadow-lg transition-transform hover:scale-105"
         >
           <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center">
             Let's Design Together

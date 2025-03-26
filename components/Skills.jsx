@@ -17,7 +17,7 @@ const Skills = () => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }} // Animate based on viewport
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      <h1 className="font-bold text-3xl capitalize mb-5 text-white">my skills</h1>
+      <h1 className="font-bold md:text-3xl text-xl capitalize mb-5 text-white">my skills</h1>
 
       <motion.ul 
         className="flex flex-wrap justify-center gap-5 text-lg max-md:text-sm text-white p-5 items-center transition-all rounded-md"

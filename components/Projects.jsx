@@ -17,7 +17,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className='scroll-mt-28 text-white'>
-      <h2 className="capitalize text-3xl font-bold mb-10 text-center">My Projects</h2>
+      <h2 className="capitalize md:text-3xl text-xl font-bold mb-10 text-center">My Projects</h2>
 
       <main className='flex flex-wrap gap-10 justify-center'>
         {currentProjects.map((project, index) => (

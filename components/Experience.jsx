@@ -33,7 +33,7 @@ const Experience = () => {
       transition={{ delay: 0.175 }}
       id="experience"
     >
-      <h2 className="text-3xl font-bold text-center text-white mb-10">Experience</h2>
+      <h2 className="md:text-3xl text-xl font-bold text-center text-white mb-10">Experience</h2>
       
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">

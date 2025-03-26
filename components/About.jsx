@@ -9,13 +9,13 @@ const About = () => {
   return (
     <motion.div
       ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-10 scroll-mt-28 text-lg font-medium text-white"
+      className="mb-28 max-w-[35rem] text-center leading-10 scroll-mt-28 md:text-lg font-medium text-white text-sm"
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }} // Slide-in when visible, fade-out when out of view
       transition={{ duration: 0.7, ease: "easeOut" }}
       id="about"
     >
-      <h1 className="text-3xl font-bold capitalize mb-3">About me</h1>
+      <h1 className="md:text-3xl text-xl font-bold capitalize mb-3">About me</h1>
       <p>
         I am a graduate of History and International Relations who transitioned from creating educational 
         and entertainment content on YouTube to pursuing my passion for programming. After graduation, 
