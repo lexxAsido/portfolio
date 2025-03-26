@@ -85,7 +85,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="h-[2rem] flex justify-center text-center text-sm mt-4">
-        <h3 className="flex items-center gap-2">
+        <h3 className="flex items-center gap-2 capitalize">
           <FaCopyright />
           copyright 2024 Asido Alexandar. All Rights reserved
         </h3>
