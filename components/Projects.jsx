@@ -28,7 +28,7 @@ const Projects = () => {
             exit={{ opacity: 0, x: index < 3 ? 100 : -100 }} // Slide-out effect
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.2 }} // Reactivate animations when in/out of view
-            className="w-[450px] h-[800px] p-5 bg-gray-600 shadow-lg rounded-xl flex flex-col justify-between"
+            className="md:w-[450px] md:h-[800px] p-5 bg-gray-600 shadow-lg rounded-xl flex flex-col justify-between"
           >
             <Image 
               src={project.img} 
