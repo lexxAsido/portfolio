@@ -1,93 +1,136 @@
-"use client"
-import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
+"use client";
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from 'react-icons/fa';
-import { MdOutlineEmail } from 'react-icons/md';
+import { FaGithubSquare } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2, // Stagger animation for child elements
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const Intro = () => {
   return (
-    <main className='text-center mb-20 w-auto lg:max-w-[50rem]'
-    id='home'>
-        <div className="flex items-center justify-center  mt-[7rem] max-md:mt-20">
-            <div className='relative'>
-                <motion.div
-                initial={{opacity: 0, scale: 0}}
-                animate={{opacity: 1, scale: 1}}
-                traansition={{type: "tween", duration: 0.2,}}
-                >
-                <Image src={'/profilepic.jpg'} alt="Asido Alexandar"
-                width={200}
-                height={190}
-                priority={true}
-                className='rounded-full  shadow-xl border-4 border-cyan-500'
-                />
-                </motion.div>
-                    {/* press windows logo + . to get waving hands icon on the computer*/}
-                <motion.span className='text-4xl absolute bottom-10 right-0 animate-bounce'
-                initial={{ opacity:0, scale: 0}}
-                animate={{ opacity:1, scale: 1}}
-                transition={{
-                    type: "spring",
-                    stiffness: 125,
-                    delay: 0.1,
-                    duration:0.7
-                }}
-                >
-                    👋
-                </motion.span>
-            </div>
+    <motion.main
+      className="md:text-center md:mb-20 w-auto lg:max-w-[50rem] text-white"
+      id="home"
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+    >
+      <div className="flex items-center justify-center mt-[7rem] max-md:mt-20">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "tween", duration: 0.2 }}
+          >
+            <Image
+              src={"/profilepic.jpg"}
+              alt="Asido Alexandar"
+              width={200}
+              height={190}
+              priority={true}
+              className="rounded-full shadow-xl border-4 border-cyan-500"
+            />
+          </motion.div>
+
+          <motion.span
+            className="text-4xl absolute bottom-10 right-0 animate-bounce"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span>
         </div>
-                <motion.p className='mb-10 mt-4 px-4 text-2xl font-medium'
-                initial={{opacity: 0, y: 100}}
-                animate={{  opacity:1, y: 0}}
-                >
-                    Hello! I'm <span className='font-extrabold text-4xl'>Asido Alexandar</span>, 
-                    a passionate and results-driven Front-End and Mobile App Developer with expertise in React, Next.js, JavaScript, TypeScript
-                    and React Native for both iOS and Android platforms. I specialize in building responsive, scalable, 
-                    and user-friendly applications that deliver seamless experiences across devices.
-                    I'm passionate about collaborating on innovative projects and leveraging my problem-solving skills to 
-                    deliver high-quality software solutions. Let's build something exceptional together!
-                </motion.p>
-        <motion.div className='flex max-md:flex-col justify-center gap-8 py-3 font-medium items-center'
-        initial={{ opacity: 0, y: 100}}
-        animate={{ opacity: 1, y: 0}}
-        transition={{delay: 0.1,}}
+      </div>
+
+      <motion.p
+        className="md:mb-10 mt-4 px-4 md:text-2xl font-medium"
+        variants={itemVariants}
+      >
+        Hello! I'm{" "}
+        <span className="font-extrabold text-md md:text-4xl">
+          Asido Alexandar
+        </span>
+        , a passionate and results-driven Front-End and Mobile App Developer
+        with expertise in React, Next.js, JavaScript, TypeScript and React
+        Native for both iOS and Android platforms. I specialize in building
+        responsive, scalable, and user-friendly applications that deliver
+        seamless experiences across devices. I'm passionate about collaborating
+        on innovative projects and leveraging my problem-solving skills to
+        deliver high-quality software solutions. Let's build something
+        exceptional together!
+      </motion.p>
+
+      <motion.div
+        className="justify-center gap-8 py-3 font-medium md:items-center text-white flex max-md:flex-col px-4"
+        variants={containerVariants}
+      >
+        <motion.a
+          className="group flex items-center md:py-4 py-2 border w-[12rem] justify-center border-yellow-500 hover:bg-cyan-500 hover:text-black rounded-xl"
+          href="/CV.pdf"
+          download
+          variants={itemVariants}
         >
-            {/* <Link href={"#contact"}
-            className=' group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
-                py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition shadow-md shadow-cyan-500'
-            > Hire Me <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition'/> </Link> */}
+          View My Resume
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition text-xl animate-ping" />
+        </motion.a>
 
-            <a href="https://www.linkedin.com/in/alexandar-asido-b06658134/" target="-blank"
-            className='bg-white text-gray-700 flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
-                <BsLinkedin className='text-blue-700 text-3xl'/>
-            </a>
+        <motion.div
+          className="flex flex-row gap-3 items-center md:mt-4"
+          variants={containerVariants}
+        >
+          <motion.a
+            href="https://www.linkedin.com/in/alexandar-asido-b06658134/"
+            target="-blank"
+            className="rounded-full gap-2 hover:scale-105 active:scale-105"
+            variants={itemVariants}
+          >
+            <BsLinkedin className="text-white text-3xl" />
+          </motion.a>
 
-            <a href="https://github.com/lexxAsido" target='_blank'
-            className='bg-white text-gray-700 text-3xl flex items-center p-4 rounded-full gap-2 hover:scale-105 active:scale-105'>
-                <FaGithubSquare/>
-            </a>
+          <motion.a
+            href="https://github.com/lexxAsido"
+            target="_blank"
+            className="text-3xl flex items-center rounded-full gap-2 hover:scale-105 active:scale-105 text-white"
+            variants={itemVariants}
+          >
+            <FaGithubSquare />
+          </motion.a>
 
-            <a className='group bg-yellow-500 hover:bg-black hover:text-white text-gray-900 flex items-center py-4 
-                px-7 rounded-full gap-2 outline-none focus:scale-110 over:scale-110 active:scale-105 transition-colors transition-400 ease-in-out delay:400 shadow-md shadow-yellow-500'
-                // save your cv in the public folder and replace with the href link
-                href="/CV.pdf" download> 
-                    Download CV <HiDownload className='opacity-60 group-hover:translate-y-1 transition text-black text-xl animate-ping group-hover:text-white'/></a>
-
-                <a
-                href="mailto:alexandaras2015@gmail.com"
-                  className="group bg-cyan-500 text-black outline-none focus:scale-110  hover:bg-black hover:text-white flex items-center 
-                    py-4 px-7 rounded-full gap-2 hover:scale-110 active:scale-105 transition-all shadow-md shadow-cyan-500 animate-bounce"
-                >
-                  Hire Me
-                </a>
+          <motion.a
+            href="mailto:alexandaras2015@gmail.com"
+            className="font-bold"
+            variants={itemVariants}
+          >
+            <MdOutlineEmail className="text-white text-4xl" />
+          </motion.a>
         </motion.div>
-    </main>
+      </motion.div>
+    </motion.main>
   );
-}
+};
 
 export default Intro;
