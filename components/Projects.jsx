@@ -35,7 +35,7 @@ const Projects = () => {
               alt={project.title} 
               width={400} 
               height={250} 
-              className='w-full h-[400px] object-cover rounded-md' 
+              className='w-full md:h-[400px] object-cover rounded-md' 
             />
             <h2 className='text-center font-extrabold text-xl mt-4'>{project.title}</h2>
             <p className='mt-3 text-sm'>{project.description}</p>
