@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-3">
             <p className="flex gap-1 items-center py-3 px-6 justify-center bg-cyan-500 rounded-lg text-lg">
               <FaPhoneVolume className="text-sm text-black" />
-              +2348103717214
+              +2348103717215
             </p>
             <a
               href="mailto:alexandaras2015@gmail.com"
