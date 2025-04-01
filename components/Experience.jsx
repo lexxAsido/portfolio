@@ -34,8 +34,8 @@ const Experience = () => {
   return (
     <motion.div
       className="max-w-7xl mx-auto px-6 py-12"
-      initial={{ opacity: 0, y: 100 }} // Animation when entering
-      animate={{ opacity: 1, y: 0 }}   // Final state when animation completes
+      initial={{ opacity: 0, y: 100 }} 
+      animate={{ opacity: 1, y: 0 }}   
       exit={{ opacity: 0, y: 100 }}
       transition={{ delay: 0.175 }}
       id="experience"
