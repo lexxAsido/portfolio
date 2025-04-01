@@ -1,42 +1,47 @@
 "use client";
-import React from 'react';
-import { motion } from 'framer-motion';
-import { experiencesData } from '@/lib/data';
+import React from "react";
+import { motion } from "framer-motion";
+import { experiencesData } from "@/lib/data";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css"; 
 
 const ExperienceCard = ({ title, location, description, icon, date, index }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }} 
-      whileInView={{ opacity: 1, x: 0 }} 
-      exit={{ opacity: 0, y: 50 }} 
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
-      className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center border border-cyan-200 dark:border-gray-700"
+    <VerticalTimelineElement
+      key={index}
+      contentStyle={{
+        background: "white",
+        color: "black",
+      }}
+      contentArrowStyle={{
+        borderRight: "7px solid  rgb(33, 43, 54)", // Arrow color
+      }}
+      iconStyle={{
+        background: "rgb(33, 43, 54)", // Icon background color
+        color: "#fff", // Icon color
+      }}
+      icon={<div className="text-4xl text-cyan-500 flex mt-7 items-center">{icon}</div>} 
     >
-      <div className="text-4xl text-cyan-500 dark:text-gray-300 mb-4">
-        {icon} 
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
-      <p className="text-gray-500 dark:text-gray-400 text-sm">{location}</p>
-      <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm">{description}</p>
-      <span className="mt-4 text-sm text-gray-600 dark:text-gray-400">{date}</span>
-    </motion.div>
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="text-gray-500 text-sm">{location}</p>
+      <p className="text-gray-800 mt-2 text-sm">{description}</p>
+      <span className="mt-4 text-sm">{date}</span>
+    </VerticalTimelineElement>
   );
 };
 
 const Experience = () => {
   return (
-    <motion.div 
-      className='max-w-7xl mx-auto px-6 py-12' 
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
+    <motion.div
+      className="max-w-7xl mx-auto px-6 py-12"
+      initial={{ opacity: 0, y: 100 }} // Animation when entering
+      animate={{ opacity: 1, y: 0 }}   // Final state when animation completes
+      exit={{ opacity: 0, y: 100 }}
       transition={{ delay: 0.175 }}
       id="experience"
     >
       <h2 className="md:text-3xl text-xl font-bold text-center text-white mb-10">Experience</h2>
-      
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+      <VerticalTimeline>
         {experiencesData.map((experience, index) => (
           <ExperienceCard
             key={index}
@@ -45,10 +50,10 @@ const Experience = () => {
             location={experience.location}
             description={experience.description}
             icon={experience.icon}
-            date={experience.date}  
+            date={experience.date}
           />
         ))}
-      </div>
+      </VerticalTimeline>
     </motion.div>
   );
 };

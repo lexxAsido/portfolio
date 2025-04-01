@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import ComputersCanvas from "@/components/canvas/computers";
 import Experience from "@/components/Experience";
 import Intro from "@/components/Intro";
 import Projects from "@/components/Projects";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center px-4 scroll-mt-28 max-w-full overflow-hidden">
       <Intro/>
+      <ComputersCanvas/>
       <SectionDivider/>
       <About/>
       <Projects/>

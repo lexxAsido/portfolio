@@ -5,28 +5,40 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import { BsMenuButtonWideFill } from "react-icons/bs";
+import Image from "next/image";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
-  const [mounted, setMounted] = useState(false); // Ensure the component is mounted before rendering
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Avoid rendering until mounted
+  if (!mounted) return null;
 
   return (
     <main className="z-[999] relative w-full flex justify-center">
-      {/* Main Navbar for larger screens (shown on md and larger screens) */}
+      {/* Main Navbar for larger screens (md and larger) */}
       <motion.div
-        className={`w-[52rem]  rounded-full fixed top-0 md:h-[3rem] border border-white border-opacity-40 bg-gray-700/40 bg-opacity-80 shadow-lg shadow-white 
-            backdrop-blur-[0.03rem] sm:top-6 max-md:h-[5rem] max-md:w-[36rem] hidden
-           md:flex md:justify-center transition-all duration-300`}
+        className={`w-full fixed top-0 md:h-[3rem] lg:gap-28 
+          backdrop-blur-[0.03rem] sm:top-6 max-md:h-[5rem] max-md:w-[36rem] hidden
+          md:flex md:justify-center transition-all duration-300 mx-20`}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <ul className="flex justify-center md:gap-10 items-center text-md  font-medium text-white">
+        <div className="flex items-center lg:px-10 gap-2">
+          <Image
+            src={"/logo2.png"}
+            alt="Asido Alexandar"
+            width={200}
+            height={190}
+            priority={true}
+            className="rounded-full w-16 h-16"
+          />
+          <h2 className="text-white font-extrabold text-xl max-lg:hidden">Asido Alexandar</h2>
+        </div>
+        <ul className="flex justify-center md:gap-10 items-center text-md font-medium text-white px-20">
           {links.map((link) => (
             <li key={link.hash}>
               <Link
@@ -42,10 +54,7 @@ const Navbar = () => {
 
       {/* Toggle Button for smaller screens */}
       <div className="absolute top-6 right-3 md:hidden">
-        <button
-          onClick={() => setNavOpen(!navOpen)}
-          className="z-50"
-        >
+        <button onClick={() => setNavOpen(!navOpen)} className="z-50">
           {navOpen ? (
             <IoMdClose className="text-5xl text-gray-800" />
           ) : (
@@ -53,14 +62,30 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Show links conditionally based on navOpen state */}
+        {/* Mobile Navbar when navOpen is true */}
         {navOpen && (
-          <div className="absolute  -right-2 bg-gray-500/60 w-screen p-10 h-screen flex flex-col gap-10 items-center z-60 backdrop-blur-sm shadow-2xl">
+          <div className="absolute top-0 right-0 bg-gray-500/60 w-screen p-10 h-screen flex flex-col gap-10 items-center z-60 backdrop-blur-sm shadow-2xl">
+            <div className="flex items-center justify-between w-full mb-6">
+              <Image
+                src={"/logo2.png"}
+                alt="Asido Alexandar"
+                width={200}
+                height={190}
+                className="rounded-full w-16 h-16"
+              />
+              <button
+                onClick={() => setNavOpen(false)}
+                className="text-5xl text-gray-800"
+              >
+                <IoMdClose />
+              </button>
+            </div>
             {links.map((link) => (
               <Link
                 key={link.hash}
                 href={link.hash}
-                className="hover:bg-gray-800 py-2 px-5 rounded-lg font-bold text-white  text-center"
+                className="hover:bg-gray-800 py-2 px-5 rounded-lg font-bold text-white text-center w-full"
+                onClick={() => setNavOpen(false)} // Close the menu after a click
               >
                 {link.name}
               </Link>

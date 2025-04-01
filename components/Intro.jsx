@@ -27,7 +27,7 @@ const itemVariants = {
 const Intro = () => {
   return (
     <motion.main
-      className="md:text-center md:mb-20 w-auto lg:max-w-[50rem] text-white"
+      className=" md:mb-5 w-auto lg:max-w-[50rem] text-white relative"
       id="home"
       initial="hidden"
       animate="show"
@@ -66,69 +66,78 @@ const Intro = () => {
         </div>
       </div>
 
-      <motion.p
-        className="md:mb-10 mt-4 px-4 md:text-2xl font-medium"
-        variants={itemVariants}
-      >
-        Hello! I'm{" "}
-        <span className="font-extrabold text-xl md:text-4xl">
-          Asido Alexandar
-        </span>
-        , a passionate and results-driven Front-End and Mobile App Developer
-        with expertise in React, Next.js, JavaScript, TypeScript and React
-        Native for both iOS and Android platforms. I specialize in building
-        responsive, scalable, and user-friendly applications that deliver
-        seamless experiences across devices. I'm passionate about collaborating
-        on innovative projects and leveraging my problem-solving skills to
-        deliver high-quality software solutions. Let's build something
-        exceptional together!
-      </motion.p>
+      {/* Flex row with circle/line and text */}
+      <section className="flex items-start mt-10 gap-8 px-4">
+        {/* Self-closing divs container (circle and line) */}
+        <div className="flex flex-col items-center">
+          <div className="w-5 h-5 rounded-full bg-yellow-500" />
+          <div className="w-1 sm:h-100 h-80 bg-gradient-to-t from-yellow-100 to-yellow-500 " />
+        </div>
 
-      <motion.div
-        className="justify-center gap-8 py-3 font-medium md:items-center text-white flex max-md:flex-col px-4"
-        variants={containerVariants}
-      >
-        <motion.a
-          className="group flex items-center md:py-4 py-2 border w-[12rem] justify-center border-yellow-500 hover:bg-cyan-500 hover:text-black rounded-xl"
-          href="/CV.pdf"
-          download
+        <div className="flex flex-col">
+
+        <motion.p
+          className="md:mb-10 mt-4 md:text-2xl font-medium"
           variants={itemVariants}
-        >
-          View My Resume
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition text-xl animate-ping" />
-        </motion.a>
+          >
+          Hello! I'm{" "}
+          <span className="font-extrabold text-xl md:text-4xl text-yellow-500">
+            Asido Alexandar
+          </span>
+          , a passionate mobile and web application developer specializing in 
+          building seamless, user-focused solutions. I create innovative apps that solve real-world problems, 
+          leveraging modern technologies to deliver engaging and impactful digital experiences.
+        </motion.p>
 
+        
         <motion.div
-          className="flex flex-row gap-3 items-center md:mt-4"
+          className="flex mt-4 gap-8 flex-col"
           variants={containerVariants}
-        >
-          <motion.a
-            href="https://www.linkedin.com/in/alexandar-asido-b06658134/"
-            target="-blank"
-            className="rounded-full gap-2 hover:scale-105 active:scale-105"
-            variants={itemVariants}
           >
-            <BsLinkedin className="text-white text-3xl" />
+          <motion.a
+            className="group flex items-center md:py-4 py-2 border w-[12rem] justify-center border-yellow-500 hover:bg-cyan-500 hover:text-black rounded-xl"
+            href="/CV.pdf"
+            download
+            variants={itemVariants}
+            >
+            View My Resume
+            <HiDownload className="opacity-60 group-hover:translate-y-1 transition text-xl animate-ping" />
           </motion.a>
 
-          <motion.a
-            href="https://github.com/lexxAsido"
-            target="_blank"
-            className="text-3xl flex items-center rounded-full gap-2 hover:scale-105 active:scale-105 text-white"
-            variants={itemVariants}
-          >
-            <FaGithubSquare />
-          </motion.a>
+          {/* Social media icons */}
+          <motion.div
+            className="flex flex-row gap-3 items-center py-2"
+            variants={containerVariants}
+            >
+            <motion.a
+              href="https://www.linkedin.com/in/alexandar-asido-b06658134/"
+              target="_blank"
+              className="rounded-full gap-2  "
+              variants={itemVariants}
+              >
+              <BsLinkedin className="text-white text-3xl hover:scale-110 active:scale-110 transition-all" />
+            </motion.a>
 
-          <motion.a
-            href="mailto:alexandaras2015@gmail.com"
-            className="font-bold"
-            variants={itemVariants}
-          >
-            <MdOutlineEmail className="text-white text-4xl" />
-          </motion.a>
+            <motion.a
+              href="https://github.com/lexxAsido"
+              target="_blank"
+              className="text-3xl flex items-center rounded-full gap-2  text-white"
+              variants={itemVariants}
+              >
+              <FaGithubSquare className="hover:scale-110 active:scale-110 transition-all"/>
+            </motion.a>
+
+            <motion.a
+              href="mailto:alexandaras2015@gmail.com"
+              className="font-bold"
+              variants={itemVariants}
+              >
+              <MdOutlineEmail className="text-white text-4xl hover:scale-110 active:scale-110 transition-all" />
+            </motion.a>
+          </motion.div>
         </motion.div>
-      </motion.div>
+              </div>
+      </section>
     </motion.main>
   );
 };
