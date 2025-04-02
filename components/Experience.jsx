@@ -20,7 +20,7 @@ const ExperienceCard = ({ title, location, description, icon, date, index }) => 
         background: "rgb(33, 43, 54)", // Icon background color
         color: "#fff", // Icon color
       }}
-      icon={<div className="text-4xl text-cyan-500 flex mt-7 items-center">{icon}</div>} 
+      icon={<div className="text-4xl text-cyan-500 flex md:mt-7 mt-5 items-center">{icon}</div>} 
     >
       <h3 className="text-xl font-semibold">{title}</h3>
       <p className="text-gray-500 text-sm">{location}</p>
