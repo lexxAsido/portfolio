@@ -51,8 +51,23 @@ const Projects = () => {
               <p className="mt-3 text-sm">{project.description}</p>
               <h3 className="text-yellow-500 mt-2 font-semibold">{project.tech}</h3>
               <span className="flex flex-row gap-4 items-center mt-4">
-                <Link href={project.liveDemo} className="bg-yellow-500 text-black px-4 py-1 rounded-md">Live Demo</Link>
-                <Link href={project.github} className="border border-yellow-500 px-4 py-1 rounded-md">GitHub</Link>
+              <Link
+                href={project.liveDemo}
+                className="bg-yellow-500 text-black px-4 py-1 rounded-md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </Link>
+              <Link
+                href={project.github}
+                className="border border-yellow-500 px-4 py-1 rounded-md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </Link>
+
               </span>
             </motion.div>
           </Tilt>
