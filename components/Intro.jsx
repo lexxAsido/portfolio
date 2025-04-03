@@ -110,9 +110,9 @@ const Intro = () => {
             variants={containerVariants}
             >
             <motion.a
-              href="https://www.linkedin.com/in/alexandar-asido-b06658134/"
+              href="https://www.linkedin.com/in/alexandar-asido-b06742359"
               target="_blank"
-              className="rounded-full gap-2  "
+              className="rounded-full gap-2"
               variants={itemVariants}
               >
               <BsLinkedin className="text-white text-3xl hover:scale-110 active:scale-110 transition-all" />
