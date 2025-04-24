@@ -25,7 +25,7 @@ const Projects = () => {
           <Tilt
             key={index}
             options={{
-              max: 100,             // Soft tilt effect
+              max: 100,             
               scale: 1.02,         // Slight scaling on hover
               speed: 1000,         // Smooth transition
               easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth easing
