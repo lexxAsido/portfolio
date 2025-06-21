@@ -67,18 +67,18 @@ const Footer = () => {
             mobile app, or just want to chat about your next big idea, feel free
             to reach out.
           </p>
-          <div className="flex flex-col items-center gap-3">
-            <p className="flex gap-1 items-center py-3 px-6 justify-center bg-cyan-500 rounded-lg text-lg">
-              <FaPhoneVolume className="text-sm text-black" />
-              +2348103717215
-            </p>
+          <div className="flex flex-row justify-center items-center gap-3">
             <a
               href="mailto:alexandaras2015@gmail.com"
-              className="p-3 flex items-center gap-2 bg-yellow-500 rounded-lg font-bold capitalize justify-center w-full md:w-auto"
+              className="py-3 px-10 flex items-center gap-2 bg-yellow-500 rounded-lg font-bold capitalize justify-center w-full md:w-auto"
             >
               Send me Mail
               <MdOutlineEmail className="text-black text-2xl" />
             </a>
+            <p className="flex gap-1 items-center py-3 px-6 justify-center bg-cyan-500 rounded-lg text-lg">
+              <FaPhoneVolume className="text-sm text-black" />
+              +2348103717215
+            </p>
           </div>
         </motion.div>
       </main>
