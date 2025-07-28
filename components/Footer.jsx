@@ -29,7 +29,7 @@ const Footer = () => {
           </h2>
           <div className="flex gap-4 mt-5">
             <Link
-              href="https://www.instagram.com/officiallexxmedia?igsh=MWg0bjVkOXcxZjl5eg%3D%3D&utm_source=qr"
+              href="https://www.instagram.com/callme_chiefkweku?igsh=MTNuM29yZWxqZjRpcA%3D%3D&utm_source=qr"
               target="_blank"
             >
               <div className="icon-container text-[#e6399b]">
