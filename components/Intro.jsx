@@ -76,18 +76,20 @@ const Intro = () => {
 
         <div className="flex flex-col">
 
-        <motion.p
-          className="md:mb-10 mt-4 md:text-2xl font-medium"
-          variants={itemVariants}
-          >
-          Hello! I'm{" "}
-          <span className="font-extrabold text-xl md:text-4xl text-yellow-500">
-            Asido Alexandar
-          </span>
-          , a passionate mobile and web application developer specializing in 
-          building seamless, user-focused solutions. I create innovative apps that solve real-world problems, 
-          leveraging modern technologies to deliver engaging and impactful digital experiences.
-        </motion.p>
+       <motion.p
+  className="md:mb-10 mt-4 md:text-2xl font-medium"
+  variants={itemVariants}
+>
+  Hello! I'm{" "}
+  <span className="font-extrabold text-xl md:text-4xl text-yellow-500">
+    Asido Alexandar
+  </span>
+  , a passionate mobile and web application developer focused on creating
+  seamless, user-centered solutions. I build innovative apps that solve
+  real-world problems, leveraging modern technologies to deliver impactful
+  and engaging digital experiences across platforms.
+</motion.p>
+
 
         
         <motion.div
