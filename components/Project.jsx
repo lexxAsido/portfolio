@@ -26,12 +26,25 @@ function Project({ title, description, tags, imageUrl, siteUrl}) {
     <section className="project-card bg-black flex flex-col overflow-hidden border-4 border-cyan-500 relative w-full h-auto hover:bg-gray-600 transition group rounded-md ">
       {/* Image element */}
       
-      <img
-        src={imageUrl}
-        alt={title}
-        className="project-image rounded-tr-lg shadow-2xl shadow-yellow-500 items-center p-2 w-full mt-3 h-[30rem] max-md:h-[15rem] group-hover:scale-110 transition group-hover:translate-x-2 group-hover:-rotate-3 group-hover:translate-y-3"
-        quality={95}
-      />
+    <div className="group relative overflow-hidden rounded-tr-lg w-full h-[30rem] max-md:h-[15rem] bg-black flex items-center justify-center">
+  <img
+    src={imageUrl}
+    alt={title}
+    className="
+      max-w-full
+      max-h-full
+      object-contain
+      transition
+      duration-300
+      ease-out
+      group-hover:scale-105
+    "
+  />
+</div>
+
+
+
+
       
       <div className="flex flex-col h-[20rem] pt-4 pb-6 px-4 max-md:h-auto">
         <h3 className="project-title text-yellow-500 font-bold text-xl m-auto underline underline-offset-8 decoration-white decoration-4 max-md:text-sm">
