@@ -20,7 +20,7 @@ const About = () => {
   <p className="text-sm md:text-lg lg:text-xl max-w-4xl mx-auto mb-8">
     I’m a passionate <strong>Software Developer</strong> with hands-on experience in building cross-platform web and mobile applications. Skilled in <strong>TypeScript, JavaScript, React, React Native, Expo, Next.js, Tailwind CSS, and Redux</strong>, I specialize in creating scalable, secure, and user-friendly solutions.
     <br /><br />
-    I have successfully developed and deployed apps to the <strong>iOS App Store</strong> and <strong>Google Play Store</strong>, including <strong>Nolt Finance</strong>, a full-featured fintech app with biometric verification, wallet services, loan management, investments, and bill payments.
+    I have successfully developed and deployed apps to the <strong>iOS App Store</strong> and <strong>Google Play Store</strong>, including <strong>TipNGoal App</strong> which is a sport Application for real time sport And <strong>Nolt Finance</strong>, a full-featured fintech app with biometric verification, wallet services, loan management, investments, and bill payments.
     <br /><br />
     I thrive on collaborating with clients, designers, and backend teams, ensuring seamless integration of <strong>RESTful APIs</strong> and delivering products that solve real-world problems. I’m a fast learner with strong problem-solving skills, always eager to take on new challenges and drive projects from idea to launch.
   </p>
