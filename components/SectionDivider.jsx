@@ -1,40 +1,46 @@
 "use client";
-import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
+import React from "react";
 
 const SectionDivider = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  // Handle scroll event
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  // Attach scroll event listener
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll); // Cleanup
-  }, []);
-
   return (
-    <motion.div
-      className="bg-gradient-to-t from-yellow-500 to-yellow-100 my-10 h-[17rem] w-1 rounded-full max-md:block text-black"
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        backgroundPosition: `0 ${scrollY * 0.5}px`, // Animate background gradient as user scrolls
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 100,
-        damping: 25,
-      }}
-      style={{
-        backgroundSize: '100% 250%', // Make the gradient large enough to create a scrollable effect
-        backgroundPosition: `0 ${scrollY * 0.5}px`, // Control the movement of the gradient
-      }}
-    >
-    </motion.div>
+    <div className="flex flex-col items-center py-12 md:py-16">
+      {/* Top fading line */}
+      <motion.div
+        className="w-px h-20 md:h-28 bg-gradient-to-b from-transparent via-yellow-500/40 to-yellow-500/60"
+        initial={{ scaleY: 0, opacity: 0 }}
+        whileInView={{ scaleY: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+        style={{ transformOrigin: "top" }}
+      />
+
+      {/* Glowing center dot */}
+      <motion.div
+        className="relative my-2"
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.4, ease: "backOut" }}
+      >
+        {/* Pulse ring */}
+        <span className="absolute inset-0 rounded-full bg-yellow-500/20 animate-ping" />
+        {/* Glow */}
+        <span className="absolute -inset-3 rounded-full bg-yellow-500/10 blur-md" />
+        {/* Core dot */}
+        <span className="relative block w-2.5 h-2.5 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 shadow-[0_0_12px_rgba(234,179,8,0.4)]" />
+      </motion.div>
+
+      {/* Bottom fading line */}
+      <motion.div
+        className="w-px h-20 md:h-28 bg-gradient-to-b from-yellow-500/60 via-yellow-500/40 to-transparent"
+        initial={{ scaleY: 0, opacity: 0 }}
+        whileInView={{ scaleY: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
+        style={{ transformOrigin: "top" }}
+      />
+    </div>
   );
 };
 

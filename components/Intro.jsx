@@ -1,145 +1,309 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    y: 0,
     transition: {
-      staggerChildren: 0.2, // Stagger animation for child elements
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
+  },
+};
+
+const floatVariants = {
+  animate: {
+    y: [0, -8, 0],
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+  },
 };
 
 const Intro = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
     <motion.main
-      className=" md:mb-5 w-auto lg:max-w-[50rem] text-white relative"
+      ref={sectionRef}
+      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden"
       id="home"
       initial="hidden"
       animate="show"
       variants={containerVariants}
     >
-      <div className="flex items-center justify-center mt-[7rem] max-md:mt-20">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "tween", duration: 0.2 }}
-          >
-            <Image
-              src={"/profilepic.jpg"}
-              alt="Asido Alexandar"
-              width={200}
-              height={190}
-              priority={true}
-              className="rounded-full shadow-xl border-4 border-cyan-500"
-            />
-          </motion.div>
-
-          <motion.span
-            className="text-4xl absolute bottom-10 right-0 animate-bounce"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
+      {/* ── Ambient Background Effects ── */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Radial glow behind profile */}
+        <motion.div
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-30"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(234,179,8,0.08) 0%, rgba(234,179,8,0.02) 40%, transparent 70%)",
+            y: backgroundY,
+          }}
+        />
+        {/* Subtle orbit rings */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-yellow-500/[0.04]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full border border-yellow-500/[0.02]" />
+        {/* Floating particles */}
+        <motion.div
+          className="absolute top-[20%] right-[15%] w-1 h-1 rounded-full bg-yellow-500/30"
+          animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-[60%] left-[10%] w-1.5 h-1.5 rounded-full bg-cyan-500/20"
+          animate={{ y: [0, -15, 0], opacity: [0.2, 0.5, 0.2] }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5,
+          }}
+        />
+        <motion.div
+          className="absolute bottom-[25%] right-[20%] w-1 h-1 rounded-full bg-yellow-500/20"
+          animate={{ y: [0, -12, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
+        />
       </div>
 
-      {/* Flex row with circle/line and text */}
-      <section className="flex items-start mt-10 gap-8 px-4">
-        {/* Self-closing divs container (circle and line) */}
-        <div className="flex flex-col items-center">
-          <div className="w-5 h-5 rounded-full bg-yellow-500" />
-          <div className="w-1 sm:h-100 h-80 bg-gradient-to-t from-yellow-100 to-yellow-500 " />
-        </div>
-
-        <div className="flex flex-col">
-
-       <motion.p
-  className="md:mb-10 mt-4 md:text-2xl font-medium"
-  variants={itemVariants}
->
-  Hello! I'm{" "}
-  <span className="font-extrabold text-xl md:text-4xl text-yellow-500">
-    Asido Alexandar
-  </span>
-  , a passionate mobile and web application developer focused on creating
-  seamless, user-centered solutions. I build innovative apps that solve
-  real-world problems, leveraging modern technologies to deliver impactful
-  and engaging digital experiences across platforms.
-</motion.p>
-
-
-        
+      <motion.div
+        className="relative z-10 flex flex-col items-center text-center px-6 pt-28 md:pt-32 pb-10"
+        style={{ opacity }}
+      >
+        {/* ── Profile Image ── */}
         <motion.div
-          className="flex mt-4 gap-8 flex-col"
-          variants={containerVariants}
+          className="relative mb-10"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 150,
+            damping: 15,
+            delay: 0.1,
+          }}
+        >
+          {/* Glow ring behind image */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-500/20 to-cyan-500/10 blur-xl scale-150" />
+
+          <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full p-[3px] bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-800">
+            <div className="w-full h-full rounded-full overflow-hidden bg-[#070c12] p-[3px]">
+              <Image
+                src={"/profilepic.jpg"}
+                alt="Asido Alexandar"
+                width={200}
+                height={200}
+                priority={true}
+                className="rounded-full object-cover w-full h-full"
+              />
+            </div>
+          </div>
+
+          {/* Animated wave emoji */}
+          <motion.span
+            className="absolute -bottom-1 -right-1 text-3xl"
+            initial={{ opacity: 0, scale: 0, rotate: -30 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              delay: 0.6,
+              duration: 0.5,
+            }}
           >
-          <motion.a
-            className="group flex items-center md:py-4 py-2 border w-[12rem] justify-center border-yellow-500 hover:bg-cyan-500 hover:text-black rounded-xl"
-            href="/CV.pdf"
-            download
+            <motion.span
+              className="inline-block"
+              animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
+              transition={{ duration: 2.5, delay: 1, repeat: Infinity, repeatDelay: 3 }}
+            >
+              👋
+            </motion.span>
+          </motion.span>
+
+          {/* Status indicator */}
+          <div className="absolute bottom-2 left-2 flex items-center gap-1.5 bg-[#070c12]/80 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            </span>
+            <span className="text-[10px] text-emerald-400/80 font-medium tracking-wide uppercase">
+              Available
+            </span>
+          </div>
+        </motion.div>
+
+        {/* ── Text Content ── */}
+        <motion.div className="max-w-2xl" variants={containerVariants}>
+          {/* Greeting badge */}
+          <motion.div className="mb-6" variants={itemVariants}>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/[0.07] border border-yellow-500/[0.12] text-yellow-500 text-sm font-medium tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse" />
+              Hello, I'm
+            </span>
+          </motion.div>
+
+          {/* Name */}
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-4 tracking-tight"
             variants={itemVariants}
-            >
-            View My Resume
-            <HiDownload className="opacity-60 group-hover:translate-y-1 transition text-xl animate-ping" />
-          </motion.a>
+            style={{ fontFamily: "'Bebas Neue', 'DM Sans', sans-serif" }}
+          >
+            Asido{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600">
+              Alexandar
+            </span>
+          </motion.h1>
 
-          {/* Social media icons */}
+          {/* Role tagline */}
+          <motion.p
+            className="text-sm md:text-base text-white/30 uppercase tracking-[0.3em] font-medium mb-8"
+            variants={itemVariants}
+          >
+            Mobile & Web Application Developer
+          </motion.p>
+
+          {/* Bio */}
+          <motion.p
+            className="text-base md:text-lg text-white/50 leading-relaxed max-w-lg mx-auto mb-10"
+            variants={itemVariants}
+          >
+            I craft seamless, user-centered digital experiences across platforms
+            — building innovative apps that solve real-world problems with modern
+            technologies.
+          </motion.p>
+
+          {/* ── CTA Buttons ── */}
           <motion.div
-            className="flex flex-row gap-3 items-center py-2"
-            variants={containerVariants}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+            variants={itemVariants}
+          >
+            <motion.a
+              className="group relative flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r from-yellow-500 to-amber-600 text-black font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(234,179,8,0.3)] hover:-translate-y-0.5"
+              href="/CV.pdf"
+              download
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-            <motion.a
-              href="https://www.linkedin.com/in/alexandar-asido-b06742359"
-              target="_blank"
-              className="rounded-full gap-2"
-              variants={itemVariants}
-              >
-              <BsLinkedin className="text-white text-3xl hover:scale-110 active:scale-110 transition-all" />
+              <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 flex items-center gap-2.5">
+                Download Resume
+                <HiDownload className="text-lg group-hover:translate-y-0.5 transition-transform duration-300" />
+              </span>
             </motion.a>
 
             <motion.a
-              href="https://github.com/lexxAsido"
-              target="_blank"
-              className="text-3xl flex items-center rounded-full gap-2  text-white"
-              variants={itemVariants}
+              href="#contact"
+              className="group flex items-center gap-2.5 px-7 py-3.5 border border-white/10 text-white/70 font-medium rounded-xl transition-all duration-300 hover:border-yellow-500/30 hover:text-white hover:bg-yellow-500/[0.04] hover:-translate-y-0.5"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Get in Touch
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
               >
-              <FaGithubSquare className="hover:scale-110 active:scale-110 transition-all"/>
-            </motion.a>
-
-            <motion.a
-              href="mailto:alexandaras2015@gmail.com"
-              className="font-bold"
-              variants={itemVariants}
-              >
-              <MdOutlineEmail className="text-white text-4xl hover:scale-110 active:scale-110 transition-all" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </motion.a>
           </motion.div>
+
+          {/* ── Social Icons ── */}
+          <motion.div
+            className="flex items-center justify-center gap-3"
+            variants={containerVariants}
+          >
+            {[
+              {
+                href: "https://www.linkedin.com/in/alexandar-asido-b06742359",
+                icon: <BsLinkedin className="text-lg" />,
+                label: "LinkedIn",
+              },
+              {
+                href: "https://github.com/lexxAsido",
+                icon: <FaGithubSquare className="text-xl" />,
+                label: "GitHub",
+              },
+              {
+                href: "mailto:alexandaras2015@gmail.com",
+                icon: <MdOutlineEmail className="text-xl" />,
+                label: "Email",
+              },
+            ].map((social) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target={social.href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="group flex items-center justify-center w-11 h-11 rounded-xl border border-white/[0.06] text-white/40 hover:text-yellow-500 hover:border-yellow-500/20 hover:bg-yellow-500/[0.05] hover:-translate-y-1 transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </motion.div>
         </motion.div>
-              </div>
-      </section>
+      </motion.div>
+
+      {/* ── Scroll Indicator ── */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 2, duration: 1 }}
+      >
+        <span className="text-[10px] text-white/30 uppercase tracking-[0.25em] font-medium">
+          Scroll
+        </span>
+        <motion.div
+          className="w-5 h-8 rounded-full border border-white/10 flex justify-center pt-1.5"
+          animate={{}}
+        >
+          <motion.div
+            className="w-1 h-1.5 rounded-full bg-yellow-500/60"
+            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </motion.div>
     </motion.main>
   );
 };
